@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -29,25 +29,24 @@
     .glow-card { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
     .glow-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px -10px rgba(56, 189, 248, 0.22); border-color: rgba(56, 189, 248, 0.45); }
     
-    /* Live Editor Active Styles */
     body.cms-editing [contenteditable="true"] {
-      outline: 1.5px dashed rgba(56, 189, 248, 0.65);
+      outline: 1.5px dashed rgba(56, 189, 248, 0.7);
       outline-offset: 4px;
       border-radius: 4px;
-      background-color: rgba(56, 189, 248, 0.04);
+      background-color: rgba(56, 189, 248, 0.05);
     }
     body.cms-editing [contenteditable="true"]:focus {
       outline: 2px solid #38bdf8;
-      background-color: rgba(56, 189, 248, 0.08);
+      background-color: rgba(56, 189, 248, 0.1);
     }
+    .cms-control { display: none; }
+    body.cms-editing .cms-control { display: flex; }
   </style>
 </head>
 
 <body class="bg-wafer-grid text-slate-200 font-sans antialiased selection:bg-sky-500 selection:text-slate-950 min-h-screen">
 
-  <!-- ========================================== -->
-  <!-- NAVIGATION BAR                             -->
-  <!-- ========================================== -->
+  <!-- NAVIGATION BAR -->
   <header class="sticky top-0 z-40 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2.5 group">
@@ -61,128 +60,181 @@
         <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
         <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
         <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
+        <a href="#resume" class="hover:text-sky-400 transition-colors text-sky-400 font-semibold">Resume</a>
         <a href="#leadership" class="hover:text-sky-400 transition-colors">Leadership</a>
       </nav>
       <div class="flex items-center gap-3">
+        <a href="resume.pdf" target="_blank" download="Josh_Hanflink_Resume.pdf"
+           class="px-3.5 py-1.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-mono font-semibold text-xs transition flex items-center gap-1.5">
+          📄 Resume (PDF)
+        </a>
         <a href="https://www.linkedin.com/in/joshua-hanflink" target="_blank" rel="noopener noreferrer"
-           class="hidden sm:flex px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200 transition items-center gap-2">
+           class="hidden sm:flex px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200 transition items-center gap-2">
           LinkedIn
         </a>
         <a href="https://github.com/jjhanflink" target="_blank" rel="noopener noreferrer"
-           class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200 transition flex items-center gap-2">
+           class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200 transition flex items-center gap-2">
           @jjhanflink
         </a>
       </div>
     </div>
   </header>
 
-  <!-- ========================================== -->
-  <!-- HERO & EDUCATION                           -->
-  <!-- ========================================== -->
+  <!-- EDUCATION -->
   <section id="education" class="relative pt-16 pb-20 md:pt-24 md:pb-28 px-6 overflow-hidden">
     <div class="max-w-6xl mx-auto">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-mono mb-6">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="cms-editable" data-cms-key="hero-status">North Carolina State University (NCSU)</span>
+        <span class="cms-editable">North Carolina State University (NCSU)</span>
       </div>
 
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl">
-        B.S. in <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 cms-editable" data-cms-key="hero-title">Electrical & Computer Engineering</span> (Double Major)
+        B.S. in <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-400 cms-editable">Electrical & Computer Engineering</span> (Double Major)
       </h1>
 
       <div class="mt-6 text-lg text-slate-400 max-w-3xl leading-relaxed space-y-2">
-        <p class="cms-editable" data-cms-key="hero-details">
+        <p class="cms-editable">
           <strong class="text-slate-200 font-semibold">Expected Graduation:</strong> Dec 2027 | <strong class="text-slate-200 font-semibold">GPA:</strong> 3.45 | <strong class="text-slate-200 font-semibold">Programs:</strong> University Honors Program | TRIO SSS-STEM Scholar
         </p>
-        <p class="text-sm border-l-2 border-sky-500 pl-4 mt-4 cms-editable" data-cms-key="hero-coursework">
+        <p class="text-sm border-l-2 border-sky-500 pl-4 mt-4 cms-editable">
           <strong class="text-slate-200">Relevant Coursework:</strong> Embedded Systems, Complex Digital Systems, Logic Design, Computer Systems Programming, Signals & Circuits, Control Systems, Linear Systems.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- INTERNSHIP & WORK EXPERIENCE               -->
-  <!-- ========================================== -->
+  <!-- INTERNSHIPS & WORK -->
   <section id="experience" class="py-16 px-6 border-t border-slate-800/80 bg-slate-950/60">
     <div class="max-w-6xl mx-auto">
       
       <!-- INTERNSHIP EXPERIENCE -->
       <div class="mb-14">
-        <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Industry Experience</span>
-        <h2 class="text-3xl font-bold text-white mt-1 mb-8">Internships</h2>
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Industry Experience</span>
+            <h2 class="text-3xl font-bold text-white mt-1">Internships</h2>
+          </div>
+          <button onclick="addInternshipCard()" class="cms-control px-3.5 py-1.5 rounded-lg bg-sky-500/20 border border-sky-400 text-sky-300 font-mono text-xs items-center gap-1.5 hover:bg-sky-500/30">
+            ➕ Add Internship
+          </button>
+        </div>
         
         <div id="internships-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <div class="p-6 rounded-xl bg-slate-900/80 border border-slate-800 glow-card relative">
-            <div class="flex items-center justify-between gap-2 mb-4">
+          <div class="card-item p-6 rounded-xl bg-slate-900/80 border border-slate-800 glow-card relative">
+            <button onclick="deleteCard(this)" class="cms-control absolute top-3 right-3 text-rose-400 hover:text-rose-300 text-xs font-mono px-2 py-1 rounded bg-rose-500/10 border border-rose-500/30">
+              🗑️ Delete Card
+            </button>
+            <div class="flex items-center justify-between gap-2 mb-4 pr-24">
               <span class="px-3 py-1 rounded-full text-xs font-mono bg-sky-500/10 text-sky-300 border border-sky-500/30 cms-editable">Aerospace & Defense</span>
               <span class="text-xs font-mono text-sky-400 cms-editable">Summer 2026</span>
             </div>
             <h3 class="text-xl font-bold text-white cms-editable">Northrop Grumman</h3>
             <h4 class="text-sm font-semibold text-slate-300 mt-1 cms-editable">Virtual Engineering Intern</h4>
-            <ul class="mt-4 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
-              <li class="cms-editable">Completed comprehensive training in Process Readiness Reviews (PRR), die drawing evaluation, and 8D root-cause problem-solving methodologies.</li>
-              <li class="cms-editable">Studied advanced semiconductor packaging materials, thermal-mechanical stress tolerances, and quality gates for mission-critical hardware.</li>
+            <ul class="bullet-list mt-4 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Completed comprehensive training in Process Readiness Reviews (PRR), die drawing evaluation, and 8D root-cause problem-solving methodologies.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Studied advanced semiconductor packaging materials, thermal-mechanical stress tolerances, and quality gates for mission-critical hardware.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
             </ul>
+            <button onclick="addBullet(this)" class="cms-control mt-3 text-xs font-mono text-sky-400 hover:underline">
+              + Add Bullet
+            </button>
           </div>
-
         </div>
       </div>
 
-      <!-- PROFESSIONAL ROLES -->
+      <!-- WORK EXPERIENCE -->
       <div>
-        <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Professional Roles</span>
-        <h2 class="text-3xl font-bold text-white mt-1 mb-8">Work Experience</h2>
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Professional Roles</span>
+            <h2 class="text-3xl font-bold text-white mt-1">Work Experience</h2>
+          </div>
+          <button onclick="addWorkCard()" class="cms-control px-3.5 py-1.5 rounded-lg bg-sky-500/20 border border-sky-400 text-sky-300 font-mono text-xs items-center gap-1.5 hover:bg-sky-500/30">
+            ➕ Add Work Role
+          </button>
+        </div>
         
         <div id="work-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <div class="p-6 rounded-xl bg-slate-900/80 border border-slate-800 glow-card">
-            <div class="flex items-center justify-between gap-2 mb-4">
+          <div class="card-item p-6 rounded-xl bg-slate-900/80 border border-slate-800 glow-card relative">
+            <button onclick="deleteCard(this)" class="cms-control absolute top-3 right-3 text-rose-400 hover:text-rose-300 text-xs font-mono px-2 py-1 rounded bg-rose-500/10 border border-rose-500/30">
+              🗑️ Delete Card
+            </button>
+            <div class="flex items-center justify-between gap-2 mb-4 pr-24">
               <span class="px-3 py-1 rounded-full text-xs font-mono bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 cms-editable">Higher Education</span>
               <span class="text-xs font-mono text-sky-400 cms-editable">Aug. 2024 - Present</span>
             </div>
             <h3 class="text-xl font-bold text-white cms-editable">NCSU College of Engineering</h3>
             <h4 class="text-sm font-semibold text-slate-300 mt-1 cms-editable">Engineering Ambassador & START Mentor</h4>
-            <ul class="mt-4 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
-              <li class="cms-editable">Host technical panels and lead departmental campus tours for cohorts of 50+ prospective engineering students and families.</li>
-              <li class="cms-editable">Mentor first-year electrical and computer engineering students on degree planning, lab courses, and undergraduate research opportunities.</li>
+            <ul class="bullet-list mt-4 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Host technical panels and lead departmental campus tours for cohorts of 50+ prospective engineering students and families.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Mentor first-year electrical and computer engineering students on degree planning, lab courses, and undergraduate research opportunities.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
             </ul>
+            <button onclick="addBullet(this)" class="cms-control mt-3 text-xs font-mono text-sky-400 hover:underline">
+              + Add Bullet
+            </button>
           </div>
 
-          <div class="p-6 rounded-xl bg-slate-900/80 border border-slate-800 glow-card">
-            <div class="flex items-center justify-between gap-2 mb-4">
+          <div class="card-item p-6 rounded-xl bg-slate-900/80 border border-slate-800 glow-card relative">
+            <button onclick="deleteCard(this)" class="cms-control absolute top-3 right-3 text-rose-400 hover:text-rose-300 text-xs font-mono px-2 py-1 rounded bg-rose-500/10 border border-rose-500/30">
+              🗑️ Delete Card
+            </button>
+            <div class="flex items-center justify-between gap-2 mb-4 pr-24">
               <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 cms-editable">Healthcare & Support</span>
               <span class="text-xs font-mono text-sky-400 cms-editable">2026 - Present</span>
             </div>
             <h3 class="text-xl font-bold text-white cms-editable">Autism Society of North Carolina</h3>
             <h4 class="text-sm font-semibold text-slate-300 mt-1 cms-editable">Direct Support Professional</h4>
-            <ul class="mt-4 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
-              <li class="cms-editable">Implement individualized behavioral intervention plans and provide structured one-on-one life skills coaching.</li>
-              <li class="cms-editable">Facilitate developmental milestones while ensuring safe, engaging, and supportive environments for individuals on the autism spectrum.</li>
+            <ul class="bullet-list mt-4 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Implement individualized behavioral intervention plans and provide structured one-on-one life skills coaching.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Facilitate developmental milestones while ensuring safe, engaging, and supportive environments for individuals on the autism spectrum.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
             </ul>
+            <button onclick="addBullet(this)" class="cms-control mt-3 text-xs font-mono text-sky-400 hover:underline">
+              + Add Bullet
+            </button>
           </div>
-
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- PROJECTS & RESEARCH                        -->
-  <!-- ========================================== -->
+  <!-- PROJECTS -->
   <section id="projects" class="py-16 px-6 border-t border-slate-800/80 bg-slate-950/50">
     <div class="max-w-6xl mx-auto">
-      <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Engineering Portfolio</span>
-      <h2 class="text-3xl font-bold text-white mt-1 mb-10">Research & Project Experience</h2>
+      <div class="flex items-center justify-between mb-10">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Engineering Portfolio</span>
+          <h2 class="text-3xl font-bold text-white mt-1">Research & Project Experience</h2>
+        </div>
+        <button onclick="addProjectCard()" class="cms-control px-3.5 py-1.5 rounded-lg bg-sky-500/20 border border-sky-400 text-sky-300 font-mono text-xs items-center gap-1.5 hover:bg-sky-500/30">
+          ➕ Add Project Card
+        </button>
+      </div>
 
       <div id="projects-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-        <!-- ATS Playwright App -->
-        <article class="project-card glow-card rounded-2xl bg-slate-900/80 border border-slate-800 p-7 flex flex-col justify-between">
+        <article class="card-item project-card glow-card rounded-2xl bg-slate-900/80 border border-slate-800 p-7 flex flex-col justify-between relative">
+          <button onclick="deleteCard(this)" class="cms-control absolute top-3 right-3 text-rose-400 hover:text-rose-300 text-xs font-mono px-2 py-1 rounded bg-rose-500/10 border border-rose-500/30">
+            🗑️ Delete Card
+          </button>
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
+            <div class="flex items-center justify-between gap-2 mb-4 pr-24">
               <span class="px-3 py-1 rounded-full text-xs font-mono bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 cms-editable">Browser Automation & AI</span>
               <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Cloud Deployed
@@ -191,11 +243,23 @@
             
             <h3 class="text-xl font-bold text-white cms-editable">Intelligent ATS Auto-Applier Workflow</h3>
             
-            <ul class="mt-3 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
-              <li class="cms-editable">Multi-tenant browser automation engine built with Streamlit, Playwright Async API, and a thread-safe SQLite queue ledger.</li>
-              <li class="cms-editable">Features URL title extraction, automated platform detection (Greenhouse, Lever, Workday), cover letter probing, and a human-in-the-loop manual review gate.</li>
-              <li class="cms-editable">Deployed live on Streamlit Community Cloud with persistent headless Debian Chromium execution.</li>
+            <ul class="bullet-list mt-3 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Multi-tenant browser automation engine built with Streamlit, Playwright Async API, and a thread-safe SQLite queue ledger.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Features URL title extraction, automated platform detection (Greenhouse, Lever, Workday), cover letter probing, and a human-in-the-loop manual review gate.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Deployed live on Streamlit Community Cloud with persistent headless Debian Chromium execution.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
             </ul>
+            <button onclick="addBullet(this)" class="cms-control mt-3 text-xs font-mono text-sky-400 hover:underline">
+              + Add Bullet
+            </button>
 
             <div class="mt-5 flex flex-wrap gap-2">
               <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300">Playwright Async</span>
@@ -217,66 +281,42 @@
           </div>
         </article>
 
-        <!-- ASCEND Semiconductor Automation -->
-        <article class="project-card glow-card rounded-2xl bg-slate-900/80 border border-slate-800 p-7 flex flex-col justify-between">
+        <article class="card-item project-card glow-card rounded-2xl bg-slate-900/80 border border-slate-800 p-7 flex flex-col justify-between relative">
+          <button onclick="deleteCard(this)" class="cms-control absolute top-3 right-3 text-rose-400 hover:text-rose-300 text-xs font-mono px-2 py-1 rounded bg-rose-500/10 border border-rose-500/30">
+            🗑️ Delete Card
+          </button>
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
+            <div class="flex items-center justify-between gap-2 mb-4 pr-24">
               <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 cms-editable">Semiconductor Automation</span>
               <span class="text-xs font-mono text-sky-400 cms-editable">Summer 2025</span>
             </div>
             <h3 class="text-xl font-bold text-white cms-editable">ASCEND Summer Research - Semiconductor Automation</h3>
-            <ul class="mt-3 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
-              <li class="cms-editable">Engineered a standalone Python/Streamlit web application automating the conversion of KLayout GDSII photolithography mask files into executable Silvaco TCAD decks.</li>
-              <li class="cms-editable">Automated oxidation, lithography, etch, and metal deposition process steps using Victory Process simulation scripts with custom UI parameters.</li>
+            <ul class="bullet-list mt-3 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Engineered a standalone Python/Streamlit web application automating the conversion of KLayout GDSII photolithography mask files into executable Silvaco TCAD decks.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
+              <li class="bullet-item relative group">
+                <span class="cms-editable">Automated oxidation, lithography, etch, and metal deposition process steps using Victory Process simulation scripts with custom UI parameters.</span>
+                <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+              </li>
             </ul>
+            <button onclick="addBullet(this)" class="cms-control mt-3 text-xs font-mono text-sky-400 hover:underline">
+              + Add Bullet
+            </button>
           </div>
         </article>
-
-        <!-- ASCEND 3D Imaging Hardware -->
-        <article class="project-card glow-card rounded-2xl bg-slate-900/80 border border-slate-800 p-7 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 cms-editable">Hardware Engineering</span>
-              <span class="text-xs font-mono text-sky-400 cms-editable">Summer 2026</span>
-            </div>
-            <h3 class="text-xl font-bold text-white cms-editable">ASCEND Summer Research - 3D Imaging Hardware System</h3>
-            <ul class="mt-3 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
-              <li class="cms-editable">Architected electrical schematics for high-speed imaging arrays, implementing a 24V power distribution network using high-efficiency DC-DC buck converters.</li>
-              <li class="cms-editable">Hand-soldered 6 custom multi-layer perfboard interfaces and conducted rigorous continuity, isolation, and short-circuit testing prior to hardware integration.</li>
-              <li class="cms-editable">Executed active-load thermal and voltage stress testing to ensure subsystem reliability across continuous capture cycles.</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- VIP Cleanroom Foundry -->
-        <article class="project-card glow-card rounded-2xl bg-slate-900/80 border border-slate-800 p-7 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono bg-purple-500/10 text-purple-300 border border-purple-500/30 cms-editable">Cleanroom Microfabrication</span>
-              <span class="text-xs font-mono text-sky-400 cms-editable">Spring 2025 - Present</span>
-            </div>
-            <h3 class="text-xl font-bold text-white cms-editable">Vertically Integrated Project (VIP) - NCSU Foundry</h3>
-            <ul class="mt-3 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
-              <li class="cms-editable">Operate class-100 cleanroom equipment (photoresist spin-coaters, Karl Suss MA6 mask aligner, CHA Mark 40 E-Beam evaporator) to fabricate MOSCAP semiconductor devices.</li>
-              <li class="cms-editable">Perform non-destructive electrical characterization, oxide thickness validation, and C-V / I-V testing using high-precision probe stations.</li>
-            </ul>
-          </div>
-        </article>
-
       </div>
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- TECHNICAL SKILLS                           -->
-  <!-- ========================================== -->
+  <!-- SKILLS -->
   <section id="skills" class="py-16 px-6 border-t border-slate-800/80 bg-slate-950/60">
     <div class="max-w-6xl mx-auto">
       <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Core Competencies</span>
       <h2 class="text-3xl font-bold text-white mt-1 mb-8">Technical Skills</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
         <div class="p-6 rounded-xl bg-slate-900/80 border border-slate-800">
           <h4 class="text-sm font-mono uppercase text-sky-400 font-semibold mb-4 cms-editable">Languages & Software</h4>
           <p class="text-sm text-slate-300 leading-loose cms-editable">
@@ -297,44 +337,74 @@
             Class-100 Cleanroom, Mask Design (GDSII), Victory Process Simulation, Spin-Coating, E-Beam Evaporation, Karl Suss MA6 Aligner, Probe Station Characterization, 8D Problem Solving, PRRs.
           </p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- LEADERSHIP & RECOGNITION                   -->
-  <!-- ========================================== -->
+  <!-- DEDICATED RESUME SECTION -->
+  <section id="resume" class="py-16 px-6 border-t border-slate-800/80 bg-slate-950/40">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Official Credentials</span>
+          <h2 class="text-3xl font-bold text-white mt-1">Curriculum Vitae & Resume</h2>
+          <p class="text-sm text-slate-400 mt-2">Comprehensive summary of academic standing, cleanroom research, and industrial automation experience.</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="resume.pdf" target="_blank" download="Josh_Hanflink_Resume.pdf"
+             class="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-mono font-bold text-sm transition flex items-center gap-2 shadow-lg shadow-sky-500/20">
+            ⬇️ Download Full PDF
+          </a>
+          <a href="resume.pdf" target="_blank" rel="noopener noreferrer"
+             class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-mono text-sm transition flex items-center gap-2">
+            ↗ Open in New Tab
+          </a>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden shadow-2xl">
+        <div class="p-4 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between">
+          <span class="text-xs font-mono text-slate-400 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> resume.pdf (Interactive Embedded Preview)
+          </span>
+          <span class="text-xs font-mono text-slate-500">Updated for 2026 Application Cycles</span>
+        </div>
+        <div class="relative w-full h-[680px] bg-slate-950">
+          <object data="resume.pdf" type="application/pdf" class="w-full h-full">
+            <div class="flex flex-col items-center justify-center h-full p-8 text-center text-slate-400 space-y-4">
+              <p class="text-base text-slate-200 font-semibold">Interactive PDF Preview</p>
+              <p class="text-sm max-w-md">Download or view the verified resume document directly using the links above.</p>
+              <a href="resume.pdf" download="Josh_Hanflink_Resume.pdf"
+                 class="px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-mono font-semibold text-xs transition">
+                Download PDF File Directly
+              </a>
+            </div>
+          </object>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
   <section id="leadership" class="py-16 px-6 border-t border-slate-800/80">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        
-        <!-- LEADERSHIP -->
         <div>
           <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Campus Impact</span>
           <h2 class="text-2xl font-bold text-white mt-1 mb-6">Leadership & Involvement</h2>
           <div class="space-y-4">
-            
             <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
               <h3 class="font-bold text-white cms-editable">Lambda Theta Phi Latin Fraternity, Inc.</h3>
               <h4 class="text-sm font-semibold text-slate-300 cms-editable">Recruitment, Scholarship & Social Chair</h4>
               <p class="text-sm text-slate-400 mt-2 cms-editable">Directed recruitment drives, philanthropy outreach, and cross-functional campus events to enhance fraternity engagement. (Apr. 2025 - Present)</p>
             </div>
-
             <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
               <h3 class="font-bold text-white cms-editable">Society of Hispanic Professional Engineers (SHPE)</h3>
               <p class="text-sm text-slate-400 mt-1 cms-editable">Active Member | Fall 2023 - Present</p>
             </div>
-
-            <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
-              <h3 class="font-bold text-white cms-editable">Alpha Phi Omega (APO)</h3>
-              <p class="text-sm text-slate-400 mt-1 cms-editable">Active Member | Fall 2023 - Spring 2026</p>
-            </div>
-
           </div>
         </div>
 
-        <!-- HONORS & AWARDS -->
         <div>
           <span class="text-xs font-mono uppercase tracking-wider text-sky-400">Recognition</span>
           <h2 class="text-2xl font-bold text-white mt-1 mb-6">Honors & Certificates</h2>
@@ -346,20 +416,13 @@
               <li class="cms-editable">Eagle Scout Rank</li>
               <li class="cms-editable">Presidential Volunteer Service Award (Gold)</li>
             </ul>
-            <div class="pt-4 border-t border-slate-800">
-              <h4 class="text-xs font-mono uppercase text-sky-400 font-semibold mb-2">Certificates</h4>
-              <p class="text-sm text-slate-400 cms-editable">Google AI Professional, Leadership Development, Rising Leaders, Interdisciplinary Teams.</p>
-            </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- FOOTER                                     -->
-  <!-- ========================================== -->
+  <!-- FOOTER -->
   <footer class="py-12 px-6 border-t border-slate-800/80 bg-slate-950 text-center">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
       <div>© 2026 Joshua Jason Hanflink • North Carolina State University (ECE)</div>
@@ -371,22 +434,18 @@
     </div>
   </footer>
 
-  <!-- ===================================================================== -->
-  <!-- IN-BROWSER CMS & LIVE GITHUB PUBLISHER (NO NOTEPAD++ NEEDED)           -->
-  <!-- ===================================================================== -->
-
-  <!-- Floating Edit Toggle Button (Fixed Bottom-Right) -->
+  <!-- FLOATING EDIT BUTTON -->
   <button id="cms-toggle-btn" onclick="toggleEditMode()"
           class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-full bg-slate-900/90 hover:bg-slate-800 border border-sky-500/50 text-sky-400 shadow-xl shadow-sky-500/10 font-mono text-xs flex items-center gap-2 backdrop-blur-md transition-all">
     <span class="w-2 h-2 rounded-full bg-sky-400"></span>
     <span id="cms-toggle-text">✏️ Edit Mode</span>
   </button>
 
-  <!-- Floating Editor Control Bar (Shown Only While In Edit Mode) -->
+  <!-- FLOATING TOOLBAR -->
   <div id="cms-toolbar" class="hidden fixed top-4 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-2xl bg-slate-900/95 border border-sky-400/40 shadow-2xl shadow-sky-500/20 backdrop-blur-lg flex items-center gap-4 text-xs font-mono">
     <span class="text-sky-400 font-semibold flex items-center gap-2">
       <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
-      Editor Active: Click any highlighted text to modify
+      Editor Active: Click text to edit, use ➕ to add items
     </span>
     <div class="h-4 w-px bg-slate-700"></div>
     <button onclick="promptGithubToken()" class="text-slate-300 hover:text-white px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 transition">
@@ -419,7 +478,7 @@
       const existing = localStorage.getItem('jjh_gh_pat') || '';
       const token = prompt(
         "Enter your GitHub Personal Access Token (PAT) with 'repo' or 'contents:write' permissions.\n\n" +
-        "This token stays strictly in your browser's private localStorage to commit updates directly to GitHub:",
+        "This token is saved strictly in your private local browser to commit updates directly to GitHub:",
         existing
       );
       if (token !== null) {
@@ -455,6 +514,108 @@
       }
     }
 
+    function addBullet(button) {
+      const ul = button.previousElementSibling;
+      const li = document.createElement('li');
+      li.className = 'bullet-item relative group';
+      li.innerHTML = `
+        <span class="cms-editable" contenteditable="true">New accomplishment or engineering responsibility...</span>
+        <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+      `;
+      ul.appendChild(li);
+    }
+
+    function deleteBullet(button) {
+      const li = button.closest('li');
+      if (li) li.remove();
+    }
+
+    function deleteCard(button) {
+      if (confirm('Delete this card?')) {
+        const card = button.closest('.card-item');
+        if (card) card.remove();
+      }
+    }
+
+    function addProjectCard() {
+      const container = document.getElementById('projects-container');
+      const card = document.createElement('article');
+      card.className = 'card-item project-card glow-card rounded-2xl bg-slate-900/80 border border-slate-800 p-7 flex flex-col justify-between relative';
+      card.innerHTML = `
+        <button onclick="deleteCard(this)" class="cms-control absolute top-3 right-3 text-rose-400 hover:text-rose-300 text-xs font-mono px-2 py-1 rounded bg-rose-500/10 border border-rose-500/30">
+          🗑️ Delete Card
+        </button>
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-4 pr-24">
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-sky-500/10 text-sky-300 border border-sky-500/30 cms-editable" contenteditable="true">Category</span>
+            <span class="text-xs font-mono text-sky-400 cms-editable" contenteditable="true">Term / Year</span>
+          </div>
+          <h3 class="text-xl font-bold text-white cms-editable" contenteditable="true">New Project Title</h3>
+          <ul class="bullet-list mt-3 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
+            <li class="bullet-item relative group">
+              <span class="cms-editable" contenteditable="true">Technical system architecture and validation...</span>
+              <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+            </li>
+          </ul>
+          <button onclick="addBullet(this)" class="cms-control mt-3 text-xs font-mono text-sky-400 hover:underline">+ Add Bullet</button>
+        </div>
+        <div class="mt-7 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+          <a href="#" class="text-xs font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1.5 cms-editable" contenteditable="true">View Repository ➔</a>
+        </div>
+      `;
+      container.appendChild(card);
+    }
+
+    function addInternshipCard() {
+      const container = document.getElementById('internships-container');
+      const card = document.createElement('div');
+      card.className = 'card-item p-6 rounded-xl bg-slate-900/80 border border-slate-800 glow-card relative';
+      card.innerHTML = `
+        <button onclick="deleteCard(this)" class="cms-control absolute top-3 right-3 text-rose-400 hover:text-rose-300 text-xs font-mono px-2 py-1 rounded bg-rose-500/10 border border-rose-500/30">
+          🗑️ Delete Card
+        </button>
+        <div class="flex items-center justify-between gap-2 mb-4 pr-24">
+          <span class="px-3 py-1 rounded-full text-xs font-mono bg-sky-500/10 text-sky-300 border border-sky-500/30 cms-editable" contenteditable="true">Field</span>
+          <span class="text-xs font-mono text-sky-400 cms-editable" contenteditable="true">Timeline</span>
+        </div>
+        <h3 class="text-xl font-bold text-white cms-editable" contenteditable="true">Company Name</h3>
+        <h4 class="text-sm font-semibold text-slate-300 mt-1 cms-editable" contenteditable="true">Role Title</h4>
+        <ul class="bullet-list mt-4 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
+          <li class="bullet-item relative group">
+            <span class="cms-editable" contenteditable="true">Key engineering responsibility...</span>
+            <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+          </li>
+        </ul>
+        <button onclick="addBullet(this)" class="cms-control mt-3 text-xs font-mono text-sky-400 hover:underline">+ Add Bullet</button>
+      `;
+      container.appendChild(card);
+    }
+
+    function addWorkCard() {
+      const container = document.getElementById('work-container');
+      const card = document.createElement('div');
+      card.className = 'card-item p-6 rounded-xl bg-slate-900/80 border border-slate-800 glow-card relative';
+      card.innerHTML = `
+        <button onclick="deleteCard(this)" class="cms-control absolute top-3 right-3 text-rose-400 hover:text-rose-300 text-xs font-mono px-2 py-1 rounded bg-rose-500/10 border border-rose-500/30">
+          🗑️ Delete Card
+        </button>
+        <div class="flex items-center justify-between gap-2 mb-4 pr-24">
+          <span class="px-3 py-1 rounded-full text-xs font-mono bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 cms-editable" contenteditable="true">Domain</span>
+          <span class="text-xs font-mono text-sky-400 cms-editable" contenteditable="true">Dates</span>
+        </div>
+        <h3 class="text-xl font-bold text-white cms-editable" contenteditable="true">Organization</h3>
+        <h4 class="text-sm font-semibold text-slate-300 mt-1 cms-editable" contenteditable="true">Role Title</h4>
+        <ul class="bullet-list mt-4 text-sm text-slate-400 leading-relaxed list-disc list-inside space-y-2">
+          <li class="bullet-item relative group">
+            <span class="cms-editable" contenteditable="true">Leadership responsibility...</span>
+            <button onclick="deleteBullet(this)" class="cms-control ml-2 text-rose-400 text-xs">[×]</button>
+          </li>
+        </ul>
+        <button onclick="addBullet(this)" class="cms-control mt-3 text-xs font-mono text-sky-400 hover:underline">+ Add Bullet</button>
+      `;
+      container.appendChild(card);
+    }
+
     async function publishDirectlyToGithub() {
       const token = localStorage.getItem('jjh_gh_pat');
       if (!token) {
@@ -469,7 +630,6 @@
       btn.disabled = true;
 
       try {
-        // 1. Fetch current file SHA from GitHub API
         const getUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`;
         const getRes = await fetch(getUrl, {
           headers: {
@@ -478,29 +638,21 @@
           }
         });
 
-        if (!getRes.ok) {
-          throw new Error(`Failed to fetch file metadata (${getRes.status}: ${getRes.statusText}). Check your token.`);
-        }
+        if (!getRes.ok) throw new Error(`GitHub API error (${getRes.status}). Check token permissions.`);
         const fileData = await getRes.json();
         const currentSha = fileData.sha;
 
-        // 2. Prepare clean HTML clone (remove editor state before saving)
         const clone = document.documentElement.cloneNode(true);
         clone.querySelector('body').classList.remove('cms-editing');
         clone.querySelectorAll('.cms-editable').forEach(el => el.removeAttribute('contenteditable'));
-        
-        // Hide toolbar in the saved version
         const cloneToolbar = clone.querySelector('#cms-toolbar');
         if (cloneToolbar) cloneToolbar.classList.add('hidden');
         const cloneToggleText = clone.querySelector('#cms-toggle-text');
         if (cloneToggleText) cloneToggleText.innerText = '✏️ Edit Mode';
 
         const fullHtml = '<!DOCTYPE html>\n' + clone.outerHTML;
-
-        // 3. UTF-8 safe Base64 encoding
         const encodedContent = btoa(unescape(encodeURIComponent(fullHtml)));
 
-        // 4. Commit updated file directly to main branch via GitHub REST API
         const putRes = await fetch(getUrl, {
           method: 'PUT',
           headers: {
